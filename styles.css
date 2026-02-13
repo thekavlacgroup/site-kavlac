@@ -1339,3 +1339,8 @@ a {
     font-size: 1.2rem;
     padding: 1.2rem 3rem;
 }
+
+/* Hero Apocalíptico */
+.hero-apocalyptic {
+    background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+}

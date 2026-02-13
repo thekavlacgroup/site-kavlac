@@ -30,10 +30,14 @@
     │
     ├── approximation.html         ✅ Página principal Approximation
     ├── approximation-suporte.html ✅ Suporte Approximation
-    └── approximation-privacidade.html ✅ Privacidade Approximation
+    ├── approximation-privacidade.html ✅ Privacidade Approximation
+    │
+    ├── termometro.html            ✅ Página principal Termômetro Global
+    ├── termometro-suporte.html    ✅ Suporte Termômetro Global
+    └── termometro-privacidade.html ✅ Privacidade Termômetro Global
 ```
 
-## ✨ Total de Arquivos: 22
+## ✨ Total de Arquivos: 26
 
 ### Páginas Principais: 4
 - index.html
@@ -41,10 +45,10 @@
 - privacidade.html
 - contato.html
 
-### Páginas de Apps: 12
-- 4 páginas principais (uma por app)
-- 4 páginas de suporte (uma por app)
-- 4 páginas de privacidade (uma por app)
+### Páginas de Apps: 15
+- 5 páginas principais (uma por app)
+- 5 páginas de suporte (uma por app)
+- 5 páginas de privacidade (uma por app)
 
 ### Assets: 3
 - logo-full.png
@@ -114,6 +118,32 @@
 **FAQs de Suporte:**
 - Controlar privacidade
 - Encontrar eventos próximos
+
+### 5. Termômetro Global Apocalíptico 🌡️
+**Páginas:**
+- termometro.html (principal)
+- termometro-suporte.html
+- termometro-privacidade.html
+
+**FAQs de Suporte:**
+- Como funciona o Índice de Risco Apocalíptico
+- Os dados são confiáveis
+- Como configurar alertas de emergência
+- O app funciona offline
+- Como interpretar os níveis de severidade
+- Posso contribuir com dados
+- O app consome muita bateria
+
+**Recursos Especiais:**
+- Monitoramento em Tempo Real de eventos globais
+- Mapa Interativo 3D com níveis de severidade
+- Alertas Preditivos com IA (até 72h de antecedência)
+- Índice de Risco Apocalíptico proprietário
+- Dados de 500+ fontes científicas (NASA, NOAA, ESA, USGS)
+- Histórico e Tendências climáticas
+- Notificações de Emergência personalizadas
+- Comunidade de Sobrevivencialistas
+- Modo Offline para cenários de blackout
 
 ## 🔗 Navegação Entre Páginas
 
