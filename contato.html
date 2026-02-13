@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - The Kavlac Group</title>
+    <meta name="description" content="Entre em contato com o The Kavlac Group">
+    <link rel="icon" type="image/png" href="logo-square.png">
+    <link rel="apple-touch-icon" href="logo-square.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="logo-full.png" alt="The Kavlac Group" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="index.html#about" class="nav-link">Sobre</a></li>
+                <li><a href="suporte.html" class="nav-link">Suporte</a></li>
+                <li><a href="privacidade.html" class="nav-link">Privacidade</a></li>
+                <li><a href="contato.html" class="nav-link active">Contato</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Entre em Contato</h1>
+            <p class="page-subtitle">Estamos prontos para ouvir você</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Canais de Comunicação</h2>
+                    <p class="contact-intro">Escolha a melhor forma de entrar em contato conosco. Respondemos todas as mensagens com a maior brevidade possível.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">📧</div>
+                            <div class="method-content">
+                                <h3>Email Principal</h3>
+                                <a href="mailto:thekavlacgroup@gmail.com" class="contact-link">thekavlacgroup@gmail.com</a>
+                                <p class="method-description">Para assuntos gerais, parcerias e informações</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">🛠️</div>
+                            <div class="method-content">
+                                <h3>Suporte Técnico</h3>
+                                <a href="mailto:thekavlacgroup@gmail.com" class="contact-link">thekavlacgroup@gmail.com</a>
+                                <p class="method-description">Problemas técnicos e dúvidas sobre aplicativos</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">🤝</div>
+                            <div class="method-content">
+                                <h3>Parcerias e Negócios</h3>
+                                <a href="mailto:thekavlacgroup@gmail.com" class="contact-link">thekavlacgroup@gmail.com</a>
+                                <p class="method-description">Propostas comerciais e oportunidades de colaboração</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="response-info">
+                        <h3>Tempo de Resposta</h3>
+                        <ul>
+                            <li><strong>Suporte Técnico:</strong> até 48 horas úteis</li>
+                            <li><strong>Assuntos Gerais:</strong> até 72 horas úteis</li>
+                            <li><strong>Parcerias:</strong> até 5 dias úteis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <div class="form-card">
+                        <h2>Envie uma Mensagem</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nome Completo *</label>
+                                <input type="text" id="name" name="name" required placeholder="Seu nome">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Assunto *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="suporte">Suporte Técnico</option>
+                                    <option value="duvida">Dúvida Geral</option>
+                                    <option value="sugestao">Sugestão</option>
+                                    <option value="parceria">Parceria/Negócios</option>
+                                    <option value="privacidade">Privacidade e Dados</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Mensagem *</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Descreva sua mensagem com o máximo de detalhes possível..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Enviar Mensagem</button>
+                        </form>
+                        <p class="form-note">* Campos obrigatórios</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h2>Perguntas Frequentes sobre Contato</h2>
+                <div class="faq-grid">
+                    <details class="faq-item">
+                        <summary>Como posso reportar um bug?</summary>
+                        <p>Envie um email para nosso suporte técnico descrevendo o problema, incluindo o nome do aplicativo, versão, modelo do dispositivo e passos para reproduzir o erro. Capturas de tela são muito úteis!</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Posso sugerir novos recursos?</summary>
+                        <p>Sim! Adoramos receber sugestões da nossa comunidade. Use o formulário acima selecionando "Sugestão" como assunto e descreva sua ideia em detalhes.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Vocês respondem em português?</summary>
+                        <p>Sim, toda nossa equipe de suporte trabalha em português e você receberá respostas no idioma.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Como funciona o processo de parceria?</summary>
+                        <p>Envie uma proposta detalhada para nosso email de parcerias. Nossa equipe comercial analisará e responderá com os próximos passos.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo-full.png" alt="The Kavlac Group" class="footer-logo">
+                    <p>Transformando tecnologia em utilidade.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="suporte.html">Suporte</a></li>
+                        <li><a href="privacidade.html">Privacidade</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>Email: thekavlacgroup@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Kavlac Group. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

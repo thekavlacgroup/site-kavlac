@@ -1,0 +1,9 @@
+# Bloquear arquivos de ambiente (onde costumam ficar as chaves)
+.env
+.env.local
+.env.*.local
+
+# Bloquear chaves JSON específicas do Google Cloud / Firebase
+*-credentials.json
+google-services.json
+service-account-file.json
