@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade de Testers - The Kavlac Group</title>
+    <meta name="description" content="Acompanhe o crescimento da nossa comunidade de testes e os novos membros que validam nossas soluções.">
+    <!-- Favicon e CSS original do seu projeto -->
+    <link rel="icon" type="image/png" href="logo-square.png">
+    <link rel="apple-touch-icon" href="logo-square.png">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para ícones sociais -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Ajustes finos para harmonia com o site oficial */
+        .community-hero {
+            padding: 160px 0 80px;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: white;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-medium);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .stats-grid-custom {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card-kavlac {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-base);
+        }
+
+        .stat-card-kavlac:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stat-number-kavlac {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label-kavlac {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .testers-container {
+            padding: 80px 0;
+        }
+
+        .testers-grid-kavlac {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tester-card-kavlac {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            transition: var(--transition-base);
+        }
+
+        .tester-card-kavlac:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        .icon-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .icon-google { background: #f0fdf4; color: #16a34a; }
+        .icon-reddit { background: #faf5ff; color: #9333ea; }
+
+        .tester-details h3 {
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .tester-details p {
+            margin: 2px 0;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .tester-date {
+            font-size: 0.75rem !important;
+            margin-top: 8px !important;
+            display: block;
+            color: var(--text-light);
+        }
+
+        .spinner { animation: fa-spin 2s infinite linear; }
+    </style>
+</head>
+<body>
+    <!-- Navbar Original -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="logo-full.png" alt="The Kavlac Group" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Início</a></li>
+                <li><a href="index.html#about" class="nav-link">Sobre</a></li>
+                <li><a href="index.html#apps" class="nav-link">Apps</a></li>
+                <li><a href="suporte.html" class="nav-link">Suporte</a></li>
+                <li><a href="privacidade.html" class="nav-link">Privacidade</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header da Comunidade -->
+    <header class="community-hero">
+        <div class="container">
+            <div class="status-badge" id="sync-status">
+                <i class="fas fa-sync spinner"></i> Sincronizando dados da nuvem...
+            </div>
+            <h1 class="section-title center">Nossa Comunidade</h1>
+            <p class="section-subtitle">Transparência e inovação através da validação colaborativa.</p>
+        </div>
+    </header>
+
+    <!-- Cards de Estatísticas -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid-custom">
+                <div class="stat-card-kavlac">
+                    <span class="stat-number-kavlac" id="total-val">0</span>
+                    <span class="stat-label-kavlac">Membros Totais</span>
+                </div>
+                <div class="stat-card-kavlac">
+                    <span class="stat-number-kavlac" id="google-val" style="background: linear-gradient(135deg, #16a34a, #4ade80); -webkit-background-clip: text;">0</span>
+                    <span class="stat-label-kavlac">Google Group</span>
+                </div>
+                <div class="stat-card-kavlac">
+                    <span class="stat-number-kavlac" id="reddit-val" style="background: linear-gradient(135deg, #9333ea, #c084fc); -webkit-background-clip: text;">0</span>
+                    <span class="stat-label-kavlac">Subreddits</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Membros -->
+    <section class="testers-container">
+        <div class="container">
+            <div class="testers-grid-kavlac" id="testersGrid">
+                <!-- Conteúdo via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Original -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo-full.png" alt="The Kavlac Group" class="footer-logo">
+                    <p>Transformando tecnologia em utilidade.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="suporte.html">Suporte</a></li>
+                        <li><a href="privacidade.html">Privacidade</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>thekavlacgroup@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Kavlac Group. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        async function updateCommunity() {
+            const grid = document.getElementById('testersGrid');
+            const status = document.getElementById('sync-status');
+            
+            try {
+                const response = await fetch('data/testers.json');
+                if (!response.ok) throw new Error();
+                
+                const members = await response.json();
+                let g = 0, r = 0;
+                
+                grid.innerHTML = '';
+                members.forEach(m => {
+                    const isGoogle = m.origem.toLowerCase().includes("google");
+                    if (isGoogle) g++; else r++;
+
+                    const card = document.createElement('div');
+                    card.className = 'tester-card-kavlac';
+                    card.innerHTML = `
+                        <div class="icon-circle ${isGoogle ? 'icon-google' : 'icon-reddit'}">
+                            <i class="fab ${m.icone || (isGoogle ? 'fa-google' : 'fa-reddit-alien')}"></i>
+                        </div>
+                        <div class="tester-details">
+                            <h3>${m.nome}</h3>
+                            <p>${m.origem}</p>
+                            <span class="tester-date"><i class="far fa-calendar-alt"></i> ${m.data}</span>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                document.getElementById('total-val').innerText = members.length;
+                document.getElementById('google-val').innerText = g;
+                document.getElementById('reddit-val').innerText = r;
+                
+                status.innerHTML = '<i class="fas fa-check-circle text-emerald-500"></i> Sincronizado com o repositório principal';
+
+            } catch (e) {
+                status.innerHTML = '<i class="fas fa-info-circle"></i> Aguardando dados da primeira sincronização...';
+                grid.innerHTML = '<p style="text-align:center; color: var(--text-light); grid-column: 1/-1;">Os dados aparecerão aqui após a execução do script no Colab.</p>';
+            }
+        }
+        window.onload = updateCommunity;
+    </script>
+</body>
+</html>
