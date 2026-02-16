@@ -8,6 +8,8 @@
     <link rel="icon" type="image/png" href="logo-square.png">
     <link rel="apple-touch-icon" href="logo-square.png">
     <link rel="stylesheet" href="styles.css">
+    <!-- Adicionado Font Awesome para suportar os novos Ã­cones sociais/comunidade se necessÃ¡rio -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -21,6 +23,8 @@
                 <li><a href="#home" class="nav-link">InÃ­cio</a></li>
                 <li><a href="#about" class="nav-link">Sobre</a></li>
                 <li><a href="#apps" class="nav-link">Apps</a></li>
+                <!-- NOVO: Link para a pÃ¡gina de monitorizaÃ§Ã£o da comunidade -->
+                <li><a href="comunidade.html" class="nav-link">Comunidade</a></li>
                 <li><a href="suporte.html" class="nav-link">Suporte</a></li>
                 <li><a href="privacidade.html" class="nav-link">Privacidade</a></li>
                 <li><a href="contato.html" class="nav-link">Contato</a></li>
@@ -40,7 +44,8 @@
             <p class="hero-subtitle">Desenvolvemos aplicativos de utilidades tecnolÃ³gicas inteligentes que simplificam o seu dia a dia e potencializam sua produtividade.</p>
             <div class="hero-cta">
                 <a href="#about" class="btn btn-primary">ConheÃ§a Mais</a>
-                <a href="contato.html" class="btn btn-secondary">Entre em Contato</a>
+                <!-- Link secundÃ¡rio atualizado para a comunidade/contato -->
+                <a href="comunidade.html" class="btn btn-secondary">Ãrea de Testers</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -55,6 +60,15 @@
                     <h2 class="section-title">Sobre NÃ³s</h2>
                     <p class="about-text">O The Kavlac Group Ã© especializado no desenvolvimento de aplicativos de utilidades que transformam complexidade em simplicidade. Nossa missÃ£o Ã© criar ferramentas tecnolÃ³gicas acessÃ­veis e eficientes que facilitam tarefas do cotidiano.</p>
                     <p class="about-text">Com foco em experiÃªncia do usuÃ¡rio e inovaÃ§Ã£o constante, entregamos soluÃ§Ãµes que realmente fazem a diferenÃ§a na vida das pessoas.</p>
+                    
+                    <!-- Bloco de Chamada para Comunidade integrado na secÃ§Ã£o Sobre -->
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-light); border-radius: 12px; border-left: 4px solid var(--primary-color); box-shadow: var(--shadow-sm);">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-dark);">Comunidade Transparente</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-medium); margin-bottom: 1rem;">Acompanhe em tempo real o crescimento da nossa base de testers oficiais do Google Play e Reddit.</p>
+                        <a href="comunidade.html" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">
+                            VER DADOS EM TEMPO REAL <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="about-visual">
                     <div class="feature-card">
@@ -63,12 +77,12 @@
                         <p>Aplicativos rÃ¡pidos e otimizados</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">ğŸ¯</div>
+                        <div class="feature-icon">í¾¯</div>
                         <h3>Foco no UsuÃ¡rio</h3>
                         <p>Design intuitivo e acessÃ­vel</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">ğŸ”’</div>
+                        <div class="feature-icon">í´’</div>
                         <h3>Privacidade</h3>
                         <p>Seus dados protegidos</p>
                     </div>
@@ -84,35 +98,35 @@
             
             <div class="apps-grid">
                 <div class="app-card" data-app="sms-dual">
-                    <div class="app-icon">ğŸ“±</div>
+                    <div class="app-icon">í³±</div>
                     <h3>Kavlac SMS Dual</h3>
                     <p>Gerencie mÃºltiplas conversas SMS de forma inteligente e organizada</p>
                     <a href="apps/sms-dual.html" class="app-link">Saiba mais â†’</a>
                 </div>
 
                 <div class="app-card" data-app="esteira">
-                    <div class="app-icon">ğŸƒ</div>
+                    <div class="app-icon">í¿ƒ</div>
                     <h3>Esteira Inteligente</h3>
                     <p>Monitore seus treinos com precisÃ£o e alcance suas metas fitness</p>
                     <a href="apps/esteira.html" class="app-link">Saiba mais â†’</a>
                 </div>
 
                 <div class="app-card" data-app="battery">
-                    <div class="app-icon">ğŸ”‹</div>
+                    <div class="app-icon">í´‹</div>
                     <h3>BatteryCycle</h3>
                     <p>Otimize a vida Ãºtil da bateria do seu dispositivo com inteligÃªncia</p>
                     <a href="apps/batterycycle.html" class="app-link">Saiba mais â†’</a>
                 </div>
 
                 <div class="app-card" data-app="approximation">
-                    <div class="app-icon">ğŸ“</div>
+                    <div class="app-icon">í³</div>
                     <h3>Approximation</h3>
                     <p>Encontre e conecte-se com pessoas e locais prÃ³ximos a vocÃª</p>
                     <a href="apps/approximation.html" class="app-link">Saiba mais â†’</a>
                 </div>
 
                 <div class="app-card" data-app="termometro">
-                    <div class="app-icon">ğŸŒ¡ï¸</div>
+                    <div class="app-icon">í¼¡ï¸</div>
                     <h3>TermÃ´metro Global ApocalÃ­ptico</h3>
                     <p>Monitore eventos climÃ¡ticos extremos e alertas apocalÃ­pticos globais em tempo real</p>
                     <a href="apps/termometro.html" class="app-link">Saiba mais â†’</a>
@@ -134,13 +148,13 @@
                 </div>
                 
                 <div class="tech-item">
-                    <div class="tech-icon">ğŸ¤–</div>
+                    <div class="tech-icon">í´–</div>
                     <h3>InteligÃªncia Artificial</h3>
                     <p>Machine Learning para experiÃªncias personalizadas e preditivas</p>
                 </div>
                 
                 <div class="tech-item">
-                    <div class="tech-icon">ğŸ”</div>
+                    <div class="tech-icon">í´</div>
                     <h3>SeguranÃ§a AvanÃ§ada</h3>
                     <p>Criptografia de ponta e proteÃ§Ã£o de dados em todas as camadas</p>
                 </div>
@@ -152,13 +166,13 @@
                 </div>
                 
                 <div class="tech-item">
-                    <div class="tech-icon">ğŸ“Š</div>
+                    <div class="tech-icon">í³Š</div>
                     <h3>Analytics Inteligente</h3>
                     <p>Dados precisos para insights acionÃ¡veis sobre seu uso</p>
                 </div>
                 
                 <div class="tech-item">
-                    <div class="tech-icon">ğŸ¨</div>
+                    <div class="tech-icon">í¾¨</div>
                     <h3>Design Adaptativo</h3>
                     <p>Interface que se ajusta perfeitamente a qualquer dispositivo</p>
                 </div>
@@ -196,6 +210,7 @@
                 <div class="footer-links">
                     <h4>Links RÃ¡pidos</h4>
                     <ul>
+                        <li><a href="comunidade.html">Comunidade</a></li>
                         <li><a href="suporte.html">Suporte</a></li>
                         <li><a href="privacidade.html">Privacidade</a></li>
                         <li><a href="contato.html">Contato</a></li>
