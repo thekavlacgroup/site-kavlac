@@ -1,74 +1,52 @@
 [
     {
         "nome": "zraybest",
-        "Google Group": "data",
-        "data": "6/02/2026",
-        "icone": "fa-reddit-alien"
+        "origem": "r/TestsCommunity",
+        "data": "06/02/2026"
     },
     {
         "nome": "danib",
-        "email": "Google Group",
-        "data": "6/02/2026",
-        "icone": "fa-google"
+        "origem": "Google Group",
+        "data": "06/02/2026"
     },
     {
         "nome": "gabrielb",
-        "email": "Google Group",
-        "data": "7/02/2026",
-        "icone": "fa-reddit-alien"
+        "origem": "Google Group",
+        "data": "07/02/2026"
     },
     {
         "nome": "angelmendezrada",
-        "Google Group": "data",
-        "data": "7/02/2026",
-        "icone": "fa-reddit-alien"
+        "origem": "r/TestMyApp",
+        "data": "07/02/2026"
     },
     {
         "nome": "victorravani98",
-        "Google Group": "data",
-        "data": "7/02/2026",
-        "icone": "fa-reddit-alien"
+        "origem": "r/betatests",
+        "data": "07/02/2026"
     },
     {
         "nome": "adityakhare863",
-        "Google Group": "data",
-        "data": "7/02/2026",
-        "icone": "fa-reddit-alien"
+        "origem": "Google Group",
+        "data": "07/02/2026"
     },
     {
         "nome": "leoberlopes",
-        "Google Group": "data",
-        "data": "11/02/2026",
-        "icone": "fa-reddit-alien"
+        "origem": "Google Group",
+        "data": "11/02/2026"
     },
     {
         "nome": "moshun11",
-        "Google Group": "data",
-        "data": "13/02/2026",
-        "icone": "fa-reddit-alien"
+        "origem": "r/googleplayconsole",
+        "data": "13/02/2026"
     },
     {
         "nome": "janmejay.sawant",
-        "Google Group": "data",
-        "data": "13/02/2026",
-        "icone": "fa-reddit-alien"
+        "origem": "Google Group",
+        "data": "13/02/2026"
     },
     {
         "nome": "Tester Kavlac",
-        "Google Group": "data",
-        "data": "16/02/2026",
-        "icone": "fa-reddit-alien"
-    },
-    {
-        "nome": "Tester Kavlac",
-        "Google Group": "data",
-        "data": "16/02/2026",
-        "icone": "fa-reddit-alien"
-    },
-    {
-        "nome": "Tester Kavlac",
-        "Google Group": "data",
-        "data": "16/02/2026",
-        "icone": "fa-reddit-alien"
+        "origem": "Google Group",
+        "data": "16/02/2026"
     }
 ]
