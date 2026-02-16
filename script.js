@@ -155,3 +155,49 @@ window.addEventListener('load', function() {
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
+
+/* ---------------------------
+   Integração: carregar comunidade (data/testers.json)
+   --------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+    const colabData = document.getElementById("colab-data");
+    if (!colabData) return;
+
+    // Tenta buscar o arquivo local /data/testers.json
+    fetch("data/testers.json", { cache: "no-store" })
+        .then(response => {
+            if (!response.ok) throw new Error("Arquivo não encontrado ou erro de rede");
+            return response.json();
+        })
+        .then(membros => {
+            if (!Array.isArray(membros) || membros.length === 0) {
+                colabData.innerHTML = '<div class="content-card"><p>Nenhum membro encontrado.</p></div>';
+                return;
+            }
+
+            // Monta grid de cards usando classes existentes
+            let html = '';
+            membros.forEach(m => {
+                // sanitize simples (evita injeção básica)
+                const nome = String(m.nome || '').replace(/</g, "&lt;");
+                const origem = String(m.origem || '').replace(/</g, "&lt;");
+                const data = String(m.data || '').replace(/</g, "&lt;");
+
+                html += `
+                    <div class="support-card">
+                        <div class="support-icon">���</div>
+                        <h3>${nome}</h3>
+                        <p><strong>Origem:</strong> ${origem}</p>
+                        <p><strong>Data:</strong> ${data}</p>
+                    </div>
+                `;
+            });
+
+            colabData.innerHTML = html;
+        })
+        .catch(err => {
+            console.error("Erro ao carregar testers.json:", err);
+            colabData.innerHTML = '<div class="content-card"><p>❌ Erro ao carregar dados da comunidade. Tente novamente mais tarde.</p></div>';
+        });
+});
+

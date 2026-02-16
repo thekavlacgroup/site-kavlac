@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Kavlac Group | Inovação e Tecnologia</title>
-    <link rel="icon" type="image/png" href="logo-square.png">
-    <link rel="apple-touch-icon" href="logo-square.png">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Kavlac Group - Inovação em Aplicativos de Utilidades</title>
+    <meta name="description" content="Desenvolvemos aplicativos de utilidades tecnológicas inteligentes que simplificam o seu dia a dia e potencializam sua produtividade."/>
+    <link rel="icon" type="image/png" href="logo-square.png"/>
+    <link rel="apple-touch-icon" href="logo-square.png"/>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <a href="#home">
-                    <img src="logo-full.png" alt="The Kavlac Group" class="logo-img">
+                <a href="index.html">
+                    <img src="logo-full.png" alt="The Kavlac Group" class="logo-img"/>
                 </a>
             </div>
             <ul class="nav-menu" id="navMenu">
@@ -25,37 +23,165 @@
                 <li><a href="#apps" class="nav-link">Apps</a></li>
                 <li><a href="community.html" class="nav-link">Comunidade</a></li>
                 <li><a href="suporte.html" class="nav-link">Suporte</a></li>
+                <li><a href="privacidade.html" class="nav-link">Privacidade</a></li>
                 <li><a href="contato.html" class="nav-link">Contato</a></li>
             </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <header id="home" class="hero">
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="container hero-content">
+            <h2 class="hero-title">Inovação que Simplifica</h2>
+            <p class="hero-subtitle">Desenvolvemos aplicativos de utilidades tecnológicas inteligentes que simplificam o seu dia a dia e potencializam sua produtividade.</p>
+            <div class="hero-cta">
+                <a href="#about" class="btn btn-primary">Conheça Mais</a>
+                <a href="contato.html" class="btn btn-secondary">Entre em Contato</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <section class="about" id="about">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Transformando tecnologia em <span class="gradient-text">utilidade</span>.</h1>
-                <p class="hero-subtitle">Desenvolvemos soluções inteligentes para o seu dia a dia.</p>
-                <div class="hero-cta">
-                    <a href="#apps" class="btn btn-primary">Conhecer Apps</a>
-                    <a href="community.html" class="btn btn-secondary">Ver Comunidade</a>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">Sobre Nós</h2>
+                    <p class="about-text">O The Kavlac Group é especializado no desenvolvimento de aplicativos de utilidades que transformam complexidade em simplicidade. Nossa missão é criar ferramentas tecnológicas acessíveis e eficientes que facilitam tarefas do cotidiano.</p>
+                    <p class="about-text">Com foco em experiência do usuário e inovação constante, entregamos soluções que realmente fazem a diferença na vida das pessoas.</p>
+                </div>
+                <div class="about-visual">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Eficiência</h3>
+                        <p>Aplicativos rápidos e otimizados</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">���</div>
+                        <h3>Foco no Usuário</h3>
+                        <p>Design intuitivo e acessível</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">���</div>
+                        <h3>Privacidade</h3>
+                        <p>Seus dados protegidos</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section id="about" class="section">
+    <section class="apps" id="apps">
         <div class="container">
-            <h2 class="section-title center">Sobre o Grupo</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <i class="fas fa-rocket icon-large"></i>
-                    <h3>Inovação</h3>
-                    <p>Sempre na vanguarda das novas tecnologias mobile.</p>
+            <h2 class="section-title center">Nossos Aplicativos</h2>
+            <p class="section-subtitle">Soluções tecnológicas que simplificam seu dia a dia</p>
+            
+            <div class="apps-grid">
+                <div class="app-card" data-app="sms-dual">
+                    <div class="app-icon">���</div>
+                    <h3>Kavlac SMS Dual</h3>
+                    <p>Gerencie múltiplas conversas SMS de forma inteligente e organizada</p>
+                    <a href="apps/sms-dual.html" class="app-link">Saiba mais →</a>
                 </div>
-                <div class="about-card">
-                    <i class="fas fa-users icon-large"></i>
-                    <h3>Comunidade</h3>
-                    <p>Validação real através de centenas de testers globais.</p>
+
+                <div class="app-card" data-app="esteira">
+                    <div class="app-icon">���</div>
+                    <h3>Esteira Inteligente</h3>
+                    <p>Monitore seus treinos com precisão e alcance suas metas fitness</p>
+                    <a href="apps/esteira.html" class="app-link">Saiba mais →</a>
+                </div>
+
+                <div class="app-card" data-app="battery">
+                    <div class="app-icon">���</div>
+                    <h3>BatteryCycle</h3>
+                    <p>Otimize a vida útil da bateria do seu dispositivo com inteligência</p>
+                    <a href="apps/batterycycle.html" class="app-link">Saiba mais →</a>
+                </div>
+
+                <div class="app-card" data-app="approximation">
+                    <div class="app-icon">���</div>
+                    <h3>Approximation</h3>
+                    <p>Encontre e conecte-se com pessoas e locais próximos a você</p>
+                    <a href="apps/approximation.html" class="app-link">Saiba mais →</a>
+                </div>
+
+                <div class="app-card" data-app="termometro">
+                    <div class="app-icon">���️</div>
+                    <h3>Termômetro Global Apocalíptico</h3>
+                    <p>Monitore eventos climáticos extremos e alertas apocalípticos globais em tempo real</p>
+                    <a href="apps/termometro.html" class="app-link">Saiba mais →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technologies">
+        <div class="container">
+            <h2 class="section-title center">Nossas Tecnologias</h2>
+            <p class="section-subtitle">Inovação que impulsiona cada aplicativo</p>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">⚡</div>
+                    <h3>Performance Otimizada</h3>
+                    <p>Algoritmos eficientes que garantem rapidez e baixo consumo de recursos</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">���</div>
+                    <h3>Inteligência Artificial</h3>
+                    <p>Machine Learning para experiências personalizadas e preditivas</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">���</div>
+                    <h3>Segurança Avançada</h3>
+                    <p>Criptografia de ponta e proteção de dados em todas as camadas</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">☁️</div>
+                    <h3>Cloud Sync</h3>
+                    <p>Sincronização em tempo real entre todos os seus dispositivos</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">���</div>
+                    <h3>Analytics Inteligente</h3>
+                    <p>Dados precisos para insights acionáveis sobre seu uso</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">���</div>
+                    <h3>Design Adaptativo</h3>
+                    <p>Interface que se ajusta perfeitamente a qualquer dispositivo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values">
+        <div class="container">
+            <h2 class="section-title center">Nossos Valores</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>Inovação Contínua</h3>
+                    <p>Sempre buscando as melhores tecnologias e práticas para oferecer soluções de ponta.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Transparência</h3>
+                    <p>Comunicação clara sobre como nossos aplicativos funcionam e tratam seus dados.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Qualidade</h3>
+                    <p>Comprometimento com excelência em cada linha de código e cada interação.</p>
                 </div>
             </div>
         </div>
@@ -65,30 +191,21 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="logo-full.png" alt="The Kavlac Group" class="footer-logo">
-                    <p>Building the future of mobile utility.</p>
+                    <img src="logo-full.png" alt="The Kavlac Group" class="footer-logo"/>
+                    <p>Transformando tecnologia em utilidade.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Links Rápidos</h4>
                     <ul>
                         <li><a href="community.html">Comunidade</a></li>
-                        <li><a href="privacidade.html">Privacidade</a></li>
                         <li><a href="suporte.html">Suporte</a></li>
+                        <li><a href="privacidade.html">Privacidade</a></li>
+                        <li><a href="contato.html">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h4>Nossas Redes</h4>
-                    <div class="social-links">
-                        <a href="https://reddit.com/r/TestsCommunity" target="_blank" title="Reddit Community">
-                            <i class="fab fa-reddit-alien"></i>
-                        </a>
-                        <a href="https://groups.google.com" target="_blank" title="Google Groups">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="mailto:thekavlacgroup@gmail.com">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
+                    <h4>Contato</h4>
+                    <p>Email: thekavlacgroup@gmail.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -97,19 +214,7 @@
         </div>
     </footer>
 
-    <script>
-        // Script simples para mobile menu (se necessário)
-        const navMenu = document.getElementById('navMenu');
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                navbar.style.background = 'transparent';
-                navbar.style.boxShadow = 'none';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
