@@ -158,12 +158,42 @@ if (window.history.replaceState) {
 
 /* ---------------------------
    Integração: carregar comunidade (data/testers.json)
+   - Ordena por data (dd/mm/yyyy) mais recente primeiro
+   - Gera avatar com iniciais e cor
    --------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
     const colabData = document.getElementById("colab-data");
     if (!colabData) return;
 
-    // Tenta buscar o arquivo local /data/testers.json
+    // util: parse dd/mm/yyyy -> Date
+    function parseBRDate(str) {
+        if (!str) return null;
+        const parts = str.split('/');
+        if (parts.length !== 3) return null;
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        return new Date(year, month, day);
+    }
+
+    // util: generate color from string
+    function stringToColor(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            hash = str.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        const h = Math.abs(hash) % 360;
+        return `hsl(${h} 70% 55%)`;
+    }
+
+    // util: initials
+    function initialsFromName(name) {
+        if (!name) return '';
+        const parts = name.trim().split(/\s+/);
+        if (parts.length === 1) return parts[0].slice(0,2).toUpperCase();
+        return (parts[0][0] + parts[parts.length-1][0]).toUpperCase();
+    }
+
     fetch("data/testers.json", { cache: "no-store" })
         .then(response => {
             if (!response.ok) throw new Error("Arquivo não encontrado ou erro de rede");
@@ -175,20 +205,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Monta grid de cards usando classes existentes
+            // map with parsed date
+            const mapped = membros.map(m => {
+                const parsed = parseBRDate(m.data);
+                return {
+                    nome: m.nome || '',
+                    origem: m.origem || '',
+                    data: m.data || '',
+                    dateObj: parsed || new Date(0)
+                };
+            });
+
+            // sort desc by dateObj
+            mapped.sort((a,b) => b.dateObj - a.dateObj);
+
+            // build HTML grid of support-card
             let html = '';
-            membros.forEach(m => {
-                // sanitize simples (evita injeção básica)
-                const nome = String(m.nome || '').replace(/</g, "&lt;");
-                const origem = String(m.origem || '').replace(/</g, "&lt;");
-                const data = String(m.data || '').replace(/</g, "&lt;");
+            mapped.forEach(m => {
+                const safeNome = String(m.nome).replace(/</g, "&lt;");
+                const safeOrigem = String(m.origem).replace(/</g, "&lt;");
+                const safeData = String(m.data).replace(/</g, "&lt;");
+                const initials = initialsFromName(safeNome);
+                const bg = stringToColor(safeNome);
 
                 html += `
                     <div class="support-card">
-                        <div class="support-icon">���</div>
-                        <h3>${nome}</h3>
-                        <p><strong>Origem:</strong> ${origem}</p>
-                        <p><strong>Data:</strong> ${data}</p>
+                        <div class="support-icon" style="display:flex;align-items:center;gap:12px;">
+                            <div style="width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:${bg};color:white;font-weight:700;font-size:1.1rem;">
+                                ${initials}
+                            </div>
+                            <div style="flex:1;">
+                                <h3 style="margin:0 0 6px 0;">${safeNome}</h3>
+                                <p style="margin:0;color:var(--text-medium);font-size:0.95rem;"><strong>Origem:</strong> ${safeOrigem}</p>
+                            </div>
+                        </div>
+                        <div style="margin-top:12px;color:var(--text-light);font-size:0.95rem;"><strong>Data:</strong> ${safeData}</div>
                     </div>
                 `;
             });
