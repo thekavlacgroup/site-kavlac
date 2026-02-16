@@ -1,254 +1,218 @@
-// The Kavlac Group - Interactive JavaScript
+/* script.js
+   - Mobile menu toggle
+   - Smooth scroll
+   - Navbar scroll effect
+   - Form handling (mailto)
+   - Intersection animations
+   - Community loader: fetch data/testers.json, sort by date (desc), avatar initials, "novo" badge for 7 days
+*/
 
-// Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            
-            // Animate hamburger icon
-            const spans = hamburger.querySelectorAll('span');
-            if (navMenu.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(8px, 8px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
+/* Utility helpers */
+function qs(selector, ctx = document) { return ctx.querySelector(selector); }
+function qsa(selector, ctx = document) { return Array.from(ctx.querySelectorAll(selector)); }
+function sanitize(str) { return String(str || '').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+/* DOM ready */
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile menu
+  const hamburger = qs('#hamburger');
+  const navMenu = qs('#navMenu');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const spans = qsa('#hamburger span');
+      if (navMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(8px, 8px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+  }
+
+  // Close mobile menu on link click
+  qsa('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        const spans = qsa('#hamburger span');
+        spans.forEach(s => { s.style.transform = 'none'; s.style.opacity = '1'; });
+      }
+    });
+  });
+
+  // Smooth scrolling for anchors
+  qsa('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#' || !document.querySelector(href)) return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 70;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    });
+  });
+
+  // Navbar shadow on scroll
+  const navbar = qs('.navbar');
+  window.addEventListener('scroll', () => {
+    const current = window.pageYOffset;
+    if (current > 100) navbar.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.1)';
+    else navbar.style.boxShadow = '0 1px 2px 0 rgba(0,0,0,0.05)';
+  });
+
+  // Contact form mailto
+  const contactForm = qs('#contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = sanitize(qs('#name').value);
+      const email = sanitize(qs('#email').value);
+      const subjectSelect = qs('#subject');
+      const subjectText = subjectSelect ? sanitize(subjectSelect.options[subjectSelect.selectedIndex].text) : 'Contato';
+      const message = sanitize(qs('#message').value);
+      const mailto = `mailto:thekavlacgroup@gmail.com?subject=${encodeURIComponent('Contato: ' + subjectText)}&body=${encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`)}`;
+      window.location.href = mailto;
+      alert('Seu cliente de email será aberto. Se não abrir automaticamente, envie um email para thekavlacgroup@gmail.com');
+    });
+  }
+
+  // Intersection animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+  qsa('.feature-card, .value-item, .support-card, .content-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // FAQ auto-open from hash
+  if (window.location.hash) {
+    const el = document.querySelector(window.location.hash);
+    if (el && el.tagName === 'DETAILS') {
+      el.open = true;
+      setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
     }
-    
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                const spans = hamburger.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && document.querySelector(href)) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                const offsetTop = target.offsetTop - 70;
-                
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Navbar scroll effect
-    let lastScroll = 0;
-    const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
-        }
-        
-        lastScroll = currentScroll;
-    });
-    
-    // Form handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Get subject text
-            const subjectSelect = document.getElementById('subject');
-            const subjectText = subjectSelect.options[subjectSelect.selectedIndex].text;
-            
-            // Create mailto link
-            const mailtoLink = `mailto:thekavlacgroup@gmail.com?subject=${encodeURIComponent('Contato: ' + subjectText)}&body=${encodeURIComponent(
-                `Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`
-            )}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show confirmation message
-            alert('Seu cliente de email será aberto. Se não abrir automaticamente, envie um email para thekavlacgroup@gmail.com');
-            
-            // Optional: Reset form
-            // contactForm.reset();
-        });
-    }
-    
-    // Scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.feature-card, .value-item, .support-card, .content-card');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-    
-    // FAQ auto-expand from URL hash
-    if (window.location.hash) {
-        const faqItem = document.querySelector(window.location.hash);
-        if (faqItem && faqItem.tagName === 'DETAILS') {
-            faqItem.open = true;
-            setTimeout(() => {
-                faqItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 100);
-        }
-    }
+  }
 });
 
-// Add active state to current page in navigation
-window.addEventListener('load', function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-            link.classList.add('active');
-        }
-    });
+/* Add active state to nav based on current page */
+window.addEventListener('load', () => {
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+  qsa('.nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === current || (current === '' && href === 'index.html')) link.classList.add('active');
+  });
 });
 
-// Prevent form resubmission on page refresh
-if (window.history.replaceState) {
-    window.history.replaceState(null, null, window.location.href);
-}
+/* Prevent form resubmission on refresh */
+if (window.history.replaceState) window.history.replaceState(null, null, window.location.href);
 
 /* ---------------------------
-   Integração: carregar comunidade (data/testers.json)
-   - Ordena por data (dd/mm/yyyy) mais recente primeiro
-   - Gera avatar com iniciais e cor
+   Community loader
+   - fetch data/testers.json
+   - sort by date (dd/mm/yyyy) desc
+   - generate avatar initials + color
+   - badge "Novo" for items within last 7 days
    --------------------------- */
-document.addEventListener("DOMContentLoaded", () => {
-    const colabData = document.getElementById("colab-data");
-    if (!colabData) return;
+(function communityLoader() {
+  function parseBRDate(str) {
+    if (!str) return null;
+    const parts = String(str).split('/');
+    if (parts.length !== 3) return null;
+    const d = parseInt(parts[0], 10);
+    const m = parseInt(parts[1], 10) - 1;
+    const y = parseInt(parts[2], 10);
+    return new Date(y, m, d);
+  }
 
-    // util: parse dd/mm/yyyy -> Date
-    function parseBRDate(str) {
-        if (!str) return null;
-        const parts = str.split('/');
-        if (parts.length !== 3) return null;
-        const day = parseInt(parts[0], 10);
-        const month = parseInt(parts[1], 10) - 1;
-        const year = parseInt(parts[2], 10);
-        return new Date(year, month, day);
-    }
+  function initials(name) {
+    if (!name) return '';
+    const parts = name.trim().split(/\s+/);
+    if (parts.length === 1) return parts[0].slice(0,2).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
 
-    // util: generate color from string
-    function stringToColor(str) {
-        let hash = 0;
-        for (let i = 0; i < str.length; i++) {
-            hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  function colorFromString(s) {
+    let hash = 0;
+    for (let i = 0; i < s.length; i++) hash = s.charCodeAt(i) + ((hash << 5) - hash);
+    const h = Math.abs(hash) % 360;
+    return `hsl(${h} 70% 45%)`;
+  }
+
+  function daysBetween(a, b) {
+    const ms = Math.abs(a - b);
+    return Math.floor(ms / (1000 * 60 * 60 * 24));
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('colab-data');
+    if (!container) return;
+
+    fetch('data/testers.json', { cache: 'no-store' })
+      .then(res => {
+        if (!res.ok) throw new Error('Network response was not ok');
+        return res.json();
+      })
+      .then(data => {
+        if (!Array.isArray(data) || data.length === 0) {
+          container.innerHTML = '<div class="content-card"><p>Nenhum membro encontrado.</p></div>';
+          return;
         }
-        const h = Math.abs(hash) % 360;
-        return `hsl(${h} 70% 55%)`;
-    }
 
-    // util: initials
-    function initialsFromName(name) {
-        if (!name) return '';
-        const parts = name.trim().split(/\s+/);
-        if (parts.length === 1) return parts[0].slice(0,2).toUpperCase();
-        return (parts[0][0] + parts[parts.length-1][0]).toUpperCase();
-    }
-
-    fetch("data/testers.json", { cache: "no-store" })
-        .then(response => {
-            if (!response.ok) throw new Error("Arquivo não encontrado ou erro de rede");
-            return response.json();
-        })
-        .then(membros => {
-            if (!Array.isArray(membros) || membros.length === 0) {
-                colabData.innerHTML = '<div class="content-card"><p>Nenhum membro encontrado.</p></div>';
-                return;
-            }
-
-            // map with parsed date
-            const mapped = membros.map(m => {
-                const parsed = parseBRDate(m.data);
-                return {
-                    nome: m.nome || '',
-                    origem: m.origem || '',
-                    data: m.data || '',
-                    dateObj: parsed || new Date(0)
-                };
-            });
-
-            // sort desc by dateObj
-            mapped.sort((a,b) => b.dateObj - a.dateObj);
-
-            // build HTML grid of support-card
-            let html = '';
-            mapped.forEach(m => {
-                const safeNome = String(m.nome).replace(/</g, "&lt;");
-                const safeOrigem = String(m.origem).replace(/</g, "&lt;");
-                const safeData = String(m.data).replace(/</g, "&lt;");
-                const initials = initialsFromName(safeNome);
-                const bg = stringToColor(safeNome);
-
-                html += `
-                    <div class="support-card">
-                        <div class="support-icon" style="display:flex;align-items:center;gap:12px;">
-                            <div style="width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:${bg};color:white;font-weight:700;font-size:1.1rem;">
-                                ${initials}
-                            </div>
-                            <div style="flex:1;">
-                                <h3 style="margin:0 0 6px 0;">${safeNome}</h3>
-                                <p style="margin:0;color:var(--text-medium);font-size:0.95rem;"><strong>Origem:</strong> ${safeOrigem}</p>
-                            </div>
-                        </div>
-                        <div style="margin-top:12px;color:var(--text-light);font-size:0.95rem;"><strong>Data:</strong> ${safeData}</div>
-                    </div>
-                `;
-            });
-
-            colabData.innerHTML = html;
-        })
-        .catch(err => {
-            console.error("Erro ao carregar testers.json:", err);
-            colabData.innerHTML = '<div class="content-card"><p>❌ Erro ao carregar dados da comunidade. Tente novamente mais tarde.</p></div>';
+        // Map and parse dates
+        const mapped = data.map(item => {
+          const dateObj = parseBRDate(item.data) || new Date(0);
+          return {
+            nome: sanitize(item.nome),
+            origem: sanitize(item.origem),
+            data: sanitize(item.data),
+            dateObj
+          };
         });
-});
+
+        // Sort desc by date
+        mapped.sort((a, b) => b.dateObj - a.dateObj);
+
+        // Build HTML
+        const now = new Date();
+        const html = mapped.map(m => {
+          const ini = initials(m.nome);
+          const bg = colorFromString(m.nome);
+          const isNew = m.dateObj && daysBetween(now, m.dateObj) <= 7;
+          return `
+            <div class="support-card">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:${bg};color:#fff;font-weight:700;font-size:1.05rem;">
+                  ${ini}
+                </div>
+                <div style="flex:1;">
+                  <h3 style="margin:0 0 6px 0;">${m.nome} ${isNew ? '<span style="background:#10b981;color:#fff;padding:4px 8px;border-radius:999px;font-size:0.75rem;margin-left:8px;">Novo</span>' : ''}</h3>
+                  <p style="margin:0;color:var(--text-medium);font-size:0.95rem;"><strong>Origem:</strong> ${m.origem}</p>
+                </div>
+              </div>
+              <div style="margin-top:12px;color:var(--text-light);font-size:0.95rem;"><strong>Data:</strong> ${m.data}</div>
+            </div>
+          `;
+        }).join('');
+
+        container.innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Erro ao carregar testers.json:', err);
+        container.innerHTML = '<div class="content-card"><p>❌ Erro ao carregar dados da comunidade. Tente novamente mais tarde.</p></div>';
+      });
+  });
+})();
 
