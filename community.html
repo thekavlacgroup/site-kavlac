@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunidade de Testers - The Kavlac Group</title>
     <meta name="description" content="Acompanhe o crescimento da nossa comunidade de testes e os novos membros que validam nossas soluções.">
-    <!-- Favicon e CSS original do seu projeto -->
     <link rel="icon" type="image/png" href="logo-square.png">
     <link rel="apple-touch-icon" href="logo-square.png">
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome para ícones sociais -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         /* Ajustes finos para harmonia com o site oficial */
@@ -140,7 +138,6 @@
     </style>
 </head>
 <body>
-    <!-- Navbar Original -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -159,7 +156,6 @@
         </div>
     </nav>
 
-    <!-- Header da Comunidade -->
     <header class="community-hero">
         <div class="container">
             <div class="status-badge" id="sync-status">
@@ -170,7 +166,6 @@
         </div>
     </header>
 
-    <!-- Cards de Estatísticas -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid-custom">
@@ -190,86 +185,11 @@
         </div>
     </section>
 
-    <!-- Lista de Membros -->
     <section class="testers-container">
         <div class="container">
             <div class="testers-grid-kavlac" id="testersGrid">
-                <!-- Conteúdo via JS -->
-            </div>
+                </div>
         </div>
     </section>
 
-    <!-- Footer Original -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="logo-full.png" alt="The Kavlac Group" class="footer-logo">
-                    <p>Transformando tecnologia em utilidade.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="suporte.html">Suporte</a></li>
-                        <li><a href="privacidade.html">Privacidade</a></li>
-                        <li><a href="contato.html">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contato</h4>
-                    <p>thekavlacgroup@gmail.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 The Kavlac Group. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        async function updateCommunity() {
-            const grid = document.getElementById('testersGrid');
-            const status = document.getElementById('sync-status');
-            
-            try {
-                const response = await fetch('data/testers.json');
-                if (!response.ok) throw new Error();
-                
-                const members = await response.json();
-                let g = 0, r = 0;
-                
-                grid.innerHTML = '';
-                members.forEach(m => {
-                    const isGoogle = m.origem.toLowerCase().includes("google");
-                    if (isGoogle) g++; else r++;
-
-                    const card = document.createElement('div');
-                    card.className = 'tester-card-kavlac';
-                    card.innerHTML = `
-                        <div class="icon-circle ${isGoogle ? 'icon-google' : 'icon-reddit'}">
-                            <i class="fab ${m.icone || (isGoogle ? 'fa-google' : 'fa-reddit-alien')}"></i>
-                        </div>
-                        <div class="tester-details">
-                            <h3>${m.nome}</h3>
-                            <p>${m.origem}</p>
-                            <span class="tester-date"><i class="far fa-calendar-alt"></i> ${m.data}</span>
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                });
-
-                document.getElementById('total-val').innerText = members.length;
-                document.getElementById('google-val').innerText = g;
-                document.getElementById('reddit-val').innerText = r;
-                
-                status.innerHTML = '<i class="fas fa-check-circle text-emerald-500"></i> Sincronizado com o repositório principal';
-
-            } catch (e) {
-                status.innerHTML = '<i class="fas fa-info-circle"></i> Aguardando dados da primeira sincronização...';
-                grid.innerHTML = '<p style="text-align:center; color: var(--text-light); grid-column: 1/-1;">Os dados aparecerão aqui após a execução do script no Colab.</p>';
-            }
-        }
-        window.onload = updateCommunity;
-    </script>
-</body>
-</html>
