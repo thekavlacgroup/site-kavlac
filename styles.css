@@ -980,6 +980,7 @@ a {
     transition: all 0.3s ease;
 }
 
+
 .footer-logo:hover {
     transform: scale(1.05);
     filter: brightness(0) invert(1) drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));
