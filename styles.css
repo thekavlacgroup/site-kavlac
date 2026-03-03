@@ -976,7 +976,10 @@ a {
     height: 65px;
     width: auto;
     margin-bottom: 1.5rem;
+    opacity: 1;
+    mix-blend-mode: normal;
     transition: all 0.3s ease;
+    display: block;
 }
 
 .footer-logo:hover {
