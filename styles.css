@@ -976,8 +976,7 @@ a {
     height: 65px;
     width: auto;
     margin-bottom: 1.5rem;
-    filter: invert(1) drop-shadow(0 2px 4px rgba(255,255,255,0.3));
-   /* filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); */
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(255,255,255,0.3));
     transition: all 0.3s ease;
 }
 
