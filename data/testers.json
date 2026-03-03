@@ -1,52 +1,142 @@
 [
     {
-        "nome": "zraybest",
-        "origem": "r/TestsCommunity",
-        "data": "06/02/2026"
-    },
-    {
-        "nome": "danib",
-        "origem": "Google Group",
-        "data": "06/02/2026"
-    },
-    {
-        "nome": "gabrielb",
-        "origem": "Google Group",
-        "data": "07/02/2026"
-    },
-    {
         "nome": "angelmendezrada",
-        "origem": "r/TestMyApp",
+        "origem": "The Kavlac Group Testers",
         "data": "07/02/2026"
     },
     {
-        "nome": "victorravani98",
-        "origem": "r/betatests",
+        "nome": "danisberton",
+        "origem": "The Kavlac Group Testers",
+        "data": "06/02/2026"
+    },
+    {
+        "nome": "fabianbuenano12",
+        "origem": "The Kavlac Group Testers",
+        "data": "02/03/2026"
+    },
+    {
+        "nome": "fabiokavlac",
+        "origem": "The Kavlac Group Testers",
+        "data": "03/02/2026"
+    },
+    {
+        "nome": "felipekavlac",
+        "origem": "The Kavlac Group Testers",
+        "data": "21/02/2026"
+    },
+    {
+        "nome": "gabrielbkavlac",
+        "origem": "The Kavlac Group Testers",
         "data": "07/02/2026"
     },
     {
-        "nome": "adityakhare863",
-        "origem": "Google Group",
+        "nome": "h.villela",
+        "origem": "The Kavlac Group Testers",
+        "data": "03/03/2026"
+    },
+    {
+        "nome": "janmejay.sawant",
+        "origem": "The Kavlac Group Testers",
         "data": "07/02/2026"
+    },
+    {
+        "nome": "jrdeliverysolucoestecnologicas",
+        "origem": "The Kavlac Group Testers",
+        "data": "01/03/2026"
     },
     {
         "nome": "leoberlopes",
-        "origem": "Google Group",
+        "origem": "The Kavlac Group Testers",
         "data": "11/02/2026"
     },
     {
         "nome": "moshun11",
-        "origem": "r/googleplayconsole",
+        "origem": "The Kavlac Group Testers",
         "data": "13/02/2026"
+    },
+    {
+        "nome": "orz88sro",
+        "origem": "The Kavlac Group Testers",
+        "data": "02/03/2026"
+    },
+    {
+        "nome": "rkavlac",
+        "origem": "The Kavlac Group Testers",
+        "data": "21/02/2026"
+    },
+    {
+        "nome": "tiagokavlac",
+        "origem": "The Kavlac Group Testers",
+        "data": "20/02/2026"
+    },
+    {
+        "nome": "victorravani98",
+        "origem": "The Kavlac Group Testers",
+        "data": "07/02/2026"
+    },
+    {
+        "nome": "zraybest",
+        "origem": "The Kavlac Group Testers",
+        "data": "06/02/2026"
+    },
+    {
+        "nome": "angelmendezrada",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "03/03/2026"
+    },
+    {
+        "nome": "danisberton",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "03/03/2026"
+    },
+    {
+        "nome": "fabianbuenano12",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "03/03/2026"
+    },
+    {
+        "nome": "fabiokavlac",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "13/02/2026"
+    },
+    {
+        "nome": "felipekavlac",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "03/03/2026"
+    },
+    {
+        "nome": "gabrielbkavlac",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "03/03/2026"
+    },
+    {
+        "nome": "h.villela",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "20/02/2026"
     },
     {
         "nome": "janmejay.sawant",
-        "origem": "Google Group",
-        "data": "13/02/2026"
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "03/03/2026"
     },
     {
-        "nome": "Kavlac",
-        "origem": "Google Group",
-        "data": "16/02/2026"
+        "nome": "jrdeliverysolucoestecnologicas",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "03/03/2026"
+    },
+    {
+        "nome": "leoberlopes",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "19/02/2026"
+    },
+    {
+        "nome": "pulsepom.contact",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "18/02/2026"
+    },
+    {
+        "nome": "tiagokavlac",
+        "origem": "TKG Relógio Apocalíptico Global",
+        "data": "20/02/2026"
     }
 ]
