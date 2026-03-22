@@ -43,33 +43,72 @@
             <div class="privacy-intro">
                 <div class="highlight-card">
                     <h2>Privacidade e Proteção de Dados</h2>
-                    <p>O Kavlac SMS Dual respeita sua privacidade e protege suas mensagens com os mais altos padrões de segurança.</p>
-                    <p class="update-info"><strong>Última atualização:</strong> Fevereiro de 2024</p>
+                    <p>O Kavlac SMS Dual respeita sua privacidade e protege suas mensagens com os mais altos padrões de segurança. <strong>Todas as suas mensagens, categorias e configurações ficam armazenadas LOCALMENTE no seu dispositivo.</strong></p>
+                    <p class="update-info"><strong>Última atualização:</strong> Março de 2024 (Nova versão)</p>
                 </div>
             </div>
 
             <div class="privacy-content">
                 <div class="privacy-section">
-                    <h2>1. Dados Coletados</h2>
+                    <h2>1. Dados Coletados e Armazenados</h2>
                     <div class="content-card">
                         <h3>1.1 Mensagens SMS</h3>
-                        <p>O app acessa suas mensagens SMS apenas para exibição e organização. <strong>Suas mensagens permanecem armazenadas localmente no seu dispositivo</strong> e não são enviadas para servidores externos, exceto quando você ativa o backup em nuvem opcional.</p>
-                        
-                        <h3>1.2 Backup em Nuvem (Opcional)</h3>
-                        <p>Se você ativar o backup automático:</p>
+                        <p>O app <strong>APENAS</strong> lê suas mensagens SMS para exibição e organização. <strong>TODAS as mensagens permanecem armazenadas localmente no seu dispositivo</strong> usando o banco de dados nativo do Android.</p>
                         <ul>
-                            <li>Mensagens são criptografadas antes do envio</li>
-                            <li>Armazenamento seguro em servidores criptografados</li>
-                            <li>Apenas você tem acesso com sua conta</li>
-                            <li>Você pode desativar e excluir backups a qualquer momento</li>
+                            <li>✅ Leitura: Para exibir mensagens na interface do app</li>
+                            <li>✅ Armazenamento: Local (banco SMS do Android)</li>
+                            <li>❌ Envio para servidores: NUNCA</li>
+                            <li>❌ Compartilhamento: NUNCA</li>
                         </ul>
                         
-                        <h3>1.3 Dados Técnicos</h3>
-                        <p>Coletamos dados técnicos anônimos para melhorias:</p>
+                        <h3>1.2 Categorias de Mensagens (NOVO)</h3>
+                        <p>Suas categorizações personalizadas são salvas localmente:</p>
+                        <ul>
+                            <li>Categorias criadas por você (ex: Bancário, Delivery, Pessoal)</li>
+                            <li>Associações entre remetentes e categorias</li>
+                            <li>Armazenamento: SharedPreferences (local no dispositivo)</li>
+                            <li>Sincronização: Apenas via backup manual (JSON exportado por você)</li>
+                        </ul>
+
+                        <h3>1.3 Configurações e Listas (NOVO)</h3>
+                        <p>Armazenamos localmente suas preferências:</p>
+                        <ul>
+                            <li><strong>Números bloqueados:</strong> Lista de remetentes bloqueados</li>
+                            <li><strong>Remetentes marcados como spam:</strong> Sua lista pessoal de spam</li>
+                            <li><strong>Categorias personalizadas:</strong> Nomes das categorias criadas</li>
+                            <li><strong>Preferências do app:</strong> Tema escuro, configurações de notificação</li>
+                        </ul>
+                        <p><strong>Armazenamento:</strong> SharedPreferences do Android (criptografado pelo sistema)</p>
+
+                        <h3>1.4 Backup Manual (NOVO)</h3>
+                        <p>Quando você exporta um backup:</p>
+                        <ul>
+                            <li>Um arquivo JSON é criado no seu dispositivo</li>
+                            <li>Contém: categorias, números bloqueados, spam, configurações</li>
+                            <li><strong>NÃO contém:</strong> Conteúdo de mensagens SMS</li>
+                            <li>Você controla onde salvar (Google Drive, armazenamento local, etc)</li>
+                            <li>Nós NÃO temos acesso a este arquivo</li>
+                        </ul>
+                        
+                        <h3>1.5 Dados Técnicos Anônimos</h3>
+                        <p>Coletamos dados técnicos básicos via Google Play:</p>
                         <ul>
                             <li>Modelo do dispositivo e versão do Android</li>
-                            <li>Relatórios de crashes e erros</li>
-                            <li>Estatísticas de uso (sem conteúdo de mensagens)</li>
+                            <li>Relatórios de crashes (através do Google Play Console)</li>
+                            <li>Estatísticas de uso gerais (instalações, desinstalações)</li>
+                        </ul>
+                        <p><strong>Importante:</strong> Estes dados SÃO anônimos e NÃO incluem conteúdo de mensagens</p>
+
+                        <h3>1.6 Dados NÃO Coletados</h3>
+                        <p><strong>NÓS NUNCA coletamos:</strong></p>
+                        <ul>
+                            <li>❌ Conteúdo das suas mensagens SMS</li>
+                            <li>❌ Números de telefone dos remetentes</li>
+                            <li>❌ Contatos da sua agenda</li>
+                            <li>❌ Localização GPS</li>
+                            <li>❌ Dados de navegação na web</li>
+                            <li>❌ Arquivos ou fotos</li>
+                            <li>❌ Outras mensagens (WhatsApp, Telegram, etc)</li>
                         </ul>
                     </div>
                 </div>
@@ -77,53 +116,138 @@
                 <div class="privacy-section">
                     <h2>2. Como Utilizamos os Dados</h2>
                     <div class="content-card">
-                        <p>Os dados são utilizados exclusivamente para:</p>
+                        <p>Os dados armazenados localmente são utilizados exclusivamente para:</p>
                         <ul>
-                            <li>Exibir e organizar suas mensagens no app</li>
-                            <li>Sincronizar entre dispositivos (se backup ativo)</li>
-                            <li>Melhorar funcionalidades e corrigir bugs</li>
-                            <li>Fornecer suporte técnico quando solicitado</li>
+                            <li>✅ Exibir suas mensagens SMS na interface do app</li>
+                            <li>✅ Aplicar categorias e filtros que você configurou</li>
+                            <li>✅ Bloquear spam e números indesejados</li>
+                            <li>✅ Sincronizar entre chips SIM (Dual SIM)</li>
+                            <li>✅ Permitir busca e organização das mensagens</li>
+                            <li>✅ Gerar backup em JSON (quando você solicita)</li>
                         </ul>
+                        
                         <p><strong>Nós NUNCA:</strong></p>
                         <ul>
-                            <li>Lemos o conteúdo das suas mensagens</li>
-                            <li>Compartilhamos suas mensagens com terceiros</li>
-                            <li>Vendemos dados a anunciantes</li>
-                            <li>Usamos mensagens para publicidade</li>
+                            <li>❌ Lemos o conteúdo das suas mensagens</li>
+                            <li>❌ Enviamos mensagens para servidores externos</li>
+                            <li>❌ Compartilhamos dados com terceiros</li>
+                            <li>❌ Vendemos dados a anunciantes</li>
+                            <li>❌ Usamos mensagens para análise ou publicidade</li>
+                            <li>❌ Acessamos mensagens de outros apps</li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>3. Armazenamento e Segurança</h2>
+                    <div class="content-card">
+                        <h3>Onde os Dados Ficam?</h3>
+                        <p><strong>100% Local no Seu Dispositivo:</strong></p>
+                        <ul>
+                            <li><strong>Mensagens SMS:</strong> Banco de dados nativo do Android (content://sms/)</li>
+                            <li><strong>Configurações:</strong> SharedPreferences (criptografado pelo Android)</li>
+                            <li><strong>Backup (opcional):</strong> Onde você escolher salvar o arquivo JSON</li>
+                        </ul>
+
+                        <h3>Medidas de Segurança:</h3>
+                        <ul>
+                            <li><strong>Sandbox do Android:</strong> App isolado de outros apps</li>
+                            <li><strong>Permissões mínimas:</strong> Apenas READ_SMS e READ_PHONE_STATE</li>
+                            <li><strong>Sem conexão externa:</strong> App funciona 100% offline</li>
+                            <li><strong>Backup criptografável:</strong> Você pode criptografar o JSON antes de enviar para nuvem</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>4. Permissões Solicitadas</h2>
+                    <div class="content-card">
+                        <p>O app solicita apenas 2 permissões essenciais:</p>
+                        <ul>
+                            <li><strong>READ_SMS:</strong> Para ler e exibir mensagens SMS</li>
+                            <li><strong>READ_PHONE_STATE:</strong> Para identificar os 2 chips SIM (Dual SIM)</li>
+                        </ul>
+                        <p><strong>NÃO pedimos:</strong> Internet, Câmera, Localização, Contatos, Microfone, Armazenamento completo</p>
                     </div>
                 </div>
 
                 <div class="privacy-section highlight">
-                    <h2>3. Exclusão de Dados</h2>
+                    <h2>5. Exclusão de Dados</h2>
                     <div class="content-card deletion-card">
-                        <h3>Solicitar Exclusão Completa:</h3>
+                        <h3>Como Excluir Seus Dados:</h3>
+                        
+                        <h4>Opção 1: Excluir Configurações do App</h4>
                         <ol>
-                            <li><a href="../contato.html">Use nosso formulário de contato</a> para solicitar exclusão</li>
-                            <li>Assunto: <strong>"Excluir meus dados - SMS Dual"</strong></li>
-                            <li>Informe o email da sua conta</li>
-                            <li>Prazo de processamento: até 7 dias úteis</li>
+                            <li>Vá em Configurações do Android</li>
+                            <li>Apps > Kavlac SMS Dual</li>
+                            <li>Armazenamento > Limpar Dados</li>
                         </ol>
-                        <p>Todos os backups e dados associados serão permanentemente removidos.</p>
+                        <p>Isso remove: categorias, listas de bloqueio, configurações</p>
+                        <p><strong>Nota:</strong> Mensagens SMS não são excluídas (estão no sistema Android)</p>
+
+                        <h4>Opção 2: Desinstalar o App</h4>
+                        <p>Desinstalar remove TODAS as configurações e listas do app</p>
+                        <p><strong>Nota:</strong> Mensagens SMS permanecem (são do sistema Android, não do app)</p>
+
+                        <h4>Opção 3: Solicitar Exclusão de Backups (se houver)</h4>
+                        <ol>
+                            <li><a href="../contato.html" style="color: #2563eb; font-weight: 600;">Use nosso formulário de contato</a></li>
+                            <li>Assunto: <strong>"Excluir meus dados - SMS Dual"</strong></li>
+                            <li>Informe seu email (se usou backup em nuvem da nossa empresa)</li>
+                            <li>Prazo: até 7 dias úteis</li>
+                        </ol>
+                        
+                        <p class="warning-note"><strong>Importante:</strong> Como o app funciona 100% localmente, geralmente NÃO temos dados seus nos nossos servidores. A exclusão via formulário só se aplica se você usou algum serviço de backup fornecido por nós (não disponível atualmente).</p>
                     </div>
                 </div>
 
                 <div class="privacy-section">
-                    <h2>4. Segurança</h2>
+                    <h2>6. Compartilhamento de Dados</h2>
                     <div class="content-card">
+                        <p><strong>Nós NÃO compartilhamos seus dados com ninguém.</strong></p>
+                        <p>O app não possui integração com:</p>
                         <ul>
-                            <li>Criptografia AES-256 para backups</li>
-                            <li>Transmissão segura via HTTPS/TLS</li>
-                            <li>Armazenamento local protegido por sandbox do Android</li>
-                            <li>Autenticação segura para acesso aos backups</li>
+                            <li>❌ Redes de anúncios</li>
+                            <li>❌ Ferramentas de analytics (além do Google Play Console padrão)</li>
+                            <li>❌ Serviços de nuvem de terceiros</li>
+                            <li>❌ Redes sociais</li>
+                            <li>❌ Outros aplicativos</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="privacy-section">
-                    <h2>5. Contato</h2>
+                    <h2>7. Assinatura e Cobrança</h2>
                     <div class="content-card">
-                        <p>Dúvidas sobre privacidade: <a href="../contato.html">Acesse nosso formulário de contato</a></p>
+                        <p>O app oferece período de testes grátis de 14 dias e assinatura premium:</p>
+                        <ul>
+                            <li>Cobrança via Google Play Billing</li>
+                            <li>Dados de pagamento gerenciados pelo Google (não por nós)</li>
+                            <li>Assinatura pode ser cancelada a qualquer momento</li>
+                            <li>NÃO armazenamos dados de cartão de crédito</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>8. Alterações nesta Política</h2>
+                    <div class="content-card">
+                        <p>Podemos atualizar esta política ocasionalmente. Alterações significativas serão notificadas através de:</p>
+                        <ul>
+                            <li>Atualização do app na Google Play Store</li>
+                            <li>Aviso na primeira abertura após a atualização</li>
+                            <li>Data de "Última atualização" no topo desta página</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>9. Contato</h2>
+                    <div class="content-card">
+                        <p>Dúvidas sobre privacidade ou proteção de dados:</p>
+                        <p><a href="../contato.html" style="color: #2563eb; font-weight: 600;">Use nosso formulário de contato</a></p>
+                        <p>Selecione "Privacidade e Dados" como assunto</p>
+                        <p>Responderemos dentro de 48 horas úteis.</p>
                     </div>
                 </div>
             </div>
@@ -151,6 +275,7 @@
                         <li><a href="esteira.html">Esteira Inteligente</a></li>
                         <li><a href="batterycycle.html">BatteryCycle</a></li>
                         <li><a href="approximation.html">Approximation</a></li>
+                        <li><a href="termometro.html">Relógio do Apocalipse</a></li>
                     </ul>
                 </div>
             </div>
