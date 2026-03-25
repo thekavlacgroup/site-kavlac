@@ -34,7 +34,7 @@
     <section class="page-header">
         <div class="container">
             <h1 class="page-title">Suporte - Kavlac SMS Dual</h1>
-            <p class="page-subtitle">Central de ajuda para o gerenciador de SMS</p>
+            <p class="page-subtitle">Versão 5.0 - Build 10</p>
         </div>
     </section>
 
@@ -42,7 +42,7 @@
         <div class="container">
             <div class="content-card">
                 <h2>Como Podemos Ajudar?</h2>
-                <p>Encontre respostas para as dúvidas mais comuns sobre o Kavlac SMS Dual, incluindo as novas funcionalidades de categorização, backup e filtros avançados.</p>
+                <p>Guia completo do Kavlac SMS Dual com interface estilo Gmail, seleção múltipla avançada, categorias personalizadas e backup local em JSON.</p>
             </div>
 
             <div class="support-grid">
@@ -57,114 +57,199 @@
                 </div>
 
                 <div class="support-card">
-                    <div class="support-icon">❓</div>
-                    <h3>Perguntas Frequentes</h3>
+                    <div class="support-icon">📖</div>
+                    <h3>Guia de Uso Completo</h3>
                     <div class="faq-list">
-                        <details class="faq-item">
-                            <summary>Como funciona o sistema de categorias?</summary>
-                            <p><strong>NOVO!</strong> O app agora possui categorias pré-definidas (Geral, Spam, Bancário, Delivery, Pessoal, Trabalho) e você pode criar categorias personalizadas ilimitadas. Pressione e segure uma mensagem, selecione "Categorizar" e escolha ou crie uma categoria.</p>
-                        </details>
                         
-                        <details class="faq-item">
-                            <summary>Como filtrar mensagens por categoria?</summary>
-                            <p><strong>NOVO!</strong> Use os chips coloridos no topo da tela para filtrar mensagens por categoria. Toque em uma categoria para ver apenas mensagens daquela categoria. A busca funciona dentro da categoria ativa.</p>
+                        <!-- PRIMEIRO ACESSO -->
+                        <details class="faq-item" open>
+                            <summary>🚀 Primeiro Acesso - Como Começar</summary>
+                            <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                <p><strong>1. Permissões Necessárias:</strong></p>
+                                <ul>
+                                    <li><strong>SMS:</strong> Para ler suas mensagens</li>
+                                    <li><strong>Telefone:</strong> Para identificar os chips SIM</li>
+                                </ul>
+                                
+                                <p style="margin-top: 1rem;"><strong>2. App Padrão de SMS:</strong></p>
+                                <p>Para excluir mensagens ou realizar operações de escrita, o Android exige que o Kavlac SMS Dual seja seu <strong>App de SMS Padrão</strong>. O app solicitará isso quando necessário.</p>
+                                
+                                <p style="margin-top: 1rem;"><strong>3. Configuração Automática:</strong></p>
+                                <p>Após conceder as permissões, o app detecta automaticamente seus chips SIM e cria as abas Chip 1 e Chip 2 com os nomes das operadoras.</p>
+                            </div>
                         </details>
 
+                        <!-- GERENCIANDO MENSAGENS -->
                         <details class="faq-item">
-                            <summary>Como fazer backup das minhas mensagens e configurações?</summary>
-                            <p><strong>NOVO!</strong> Vá no menu (💾) > Exportar Backup. O app criará um arquivo JSON com todas as suas categorias, números bloqueados e configurações. Você pode importar este backup em outro dispositivo ou após reinstalar o app.</p>
+                            <summary>📱 Como gerenciar mensagens?</summary>
+                            <p><strong>Para ler:</strong> Toque na aba do Chip desejado (Chip 1 ou Chip 2) e navegue pela lista de mensagens.</p>
+                            <p><strong>Para pesquisar:</strong> Digite na barra de busca no topo da tela. A busca funciona em tempo real.</p>
+                            <p><strong>Para atualizar:</strong> Puxe a lista para baixo (Swipe-to-refresh) para recarregar mensagens.</p>
                         </details>
 
+                        <!-- MODO DE SELEÇÃO ESTILO GMAIL -->
                         <details class="faq-item">
-                            <summary>Como restaurar um backup?</summary>
-                            <p><strong>NOVO!</strong> Vá no menu (💾) > Importar Backup e selecione o arquivo JSON que você exportou anteriormente. Todas as suas configurações, categorias e listas de bloqueio serão restauradas.</p>
+                            <summary>✅ Modo de Seleção "Estilo Gmail" - Como usar?</summary>
+                            <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                <p><strong>Ativar Modo de Seleção:</strong></p>
+                                <ol>
+                                    <li>Pressione e segure (<strong>clique longo</strong>) qualquer mensagem</li>
+                                    <li>O modo de seleção será ativado automaticamente</li>
+                                    <li>Checkboxes aparecerão ao lado de cada mensagem</li>
+                                    <li>Um contador dinâmico aparecerá na barra superior mostrando quantas mensagens estão selecionadas</li>
+                                </ol>
+                                
+                                <p style="margin-top: 1rem;"><strong>Selecionar Mensagens:</strong></p>
+                                <ul>
+                                    <li>Toque em outras mensagens para adicioná-las à seleção</li>
+                                    <li>Use o botão <strong>✅ Selecionar Tudo</strong> para marcar todas as mensagens da categoria atual</li>
+                                    <li>Toque novamente para desmarcar</li>
+                                </ul>
+                                
+                                <p style="margin-top: 1rem;"><strong>Ações Disponíveis (Barra Superior):</strong></p>
+                                <ul>
+                                    <li><strong>🗑️ Lixeira:</strong> Exclui as mensagens selecionadas (confirmação necessária)</li>
+                                    <li><strong>⚠️ Aviso:</strong> Marca os remetentes como Spam</li>
+                                    <li><strong>🚫 Bloquear:</strong> Adiciona os números à lista de bloqueio permanente</li>
+                                    <li><strong>📁 Mover:</strong> Escolhe uma categoria para os remetentes selecionados</li>
+                                    <li><strong>✅ Checkbox:</strong> Seleciona ou desmarca todas as mensagens</li>
+                                </ul>
+                            </div>
                         </details>
 
+                        <!-- ORGANIZANDO CATEGORIAS -->
                         <details class="faq-item">
-                            <summary>Como selecionar várias mensagens de uma vez?</summary>
-                            <p><strong>NOVO!</strong> Pressione e segure uma mensagem para ativar o modo de seleção. Checkboxes aparecerão ao lado de cada mensagem. Toque nas mensagens que deseja selecionar e use as opções no menu para excluir ou categorizar em lote.</p>
+                            <summary>📁 Como organizar por categorias?</summary>
+                            <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                <p><strong>Categorias Padrão:</strong></p>
+                                <ul>
+                                    <li><strong>Geral:</strong> Categoria padrão para todas as mensagens</li>
+                                    <li><strong>Spam:</strong> Mensagens marcadas como spam</li>
+                                </ul>
+                                
+                                <p style="margin-top: 1rem;"><strong>Criar Nova Categoria:</strong></p>
+                                <ol>
+                                    <li>Toque no botão <strong>"+ Nova"</strong> na barra de categorias (chips coloridos no topo)</li>
+                                    <li>Digite o nome da categoria (ex: Trabalho, Banco, Pessoal, Delivery)</li>
+                                    <li>Confirme</li>
+                                    <li>A categoria será criada e adicionada aos filtros automaticamente</li>
+                                </ol>
+                                
+                                <p style="margin-top: 1rem;"><strong>Mover Remetente para Categoria:</strong></p>
+                                <ol>
+                                    <li>Entre no modo de seleção (clique longo)</li>
+                                    <li>Selecione as mensagens do remetente desejado</li>
+                                    <li>Toque no ícone <strong>📁 Mover</strong></li>
+                                    <li>Escolha a categoria</li>
+                                    <li><strong>Importante:</strong> Todas as futuras mensagens deste remetente serão classificadas automaticamente nesta categoria!</li>
+                                </ol>
+                                
+                                <p style="margin-top: 1rem;"><strong>Excluir Categoria:</strong></p>
+                                <p>Dê um <strong>clique longo</strong> no nome da categoria na barra de filtros (chips). As mensagens voltarão para "Geral".</p>
+                            </div>
                         </details>
 
+                        <!-- FILTROS E BUSCA -->
                         <details class="faq-item">
-                            <summary>Como configurar dual SIM no app?</summary>
-                            <p>O app detecta automaticamente ambos os chips SIM. Use as abas "Chip 1" e "Chip 2" no topo para alternar entre as mensagens de cada operadora. O nome da operadora aparece na aba.</p>
+                            <summary>🔍 Como usar filtros e busca?</summary>
+                            <p><strong>Filtros por Chips (Categorias):</strong> Use os botões arredondados coloridos no topo para filtrar mensagens por categoria. Toque em uma categoria para ver apenas mensagens daquela categoria.</p>
+                            <p><strong>Busca Instantânea:</strong> Digite na barra de busca. A pesquisa funciona em tempo real e encontra mensagens por conteúdo ou número do remetente.</p>
+                            <p><strong>Busca + Filtro:</strong> Selecione uma categoria primeiro, depois use a busca. Os resultados serão filtrados apenas dentro da categoria ativa.</p>
                         </details>
 
+                        <!-- BACKUP E RESTAURAÇÃO -->
                         <details class="faq-item">
-                            <summary>Como criar uma nova categoria personalizada?</summary>
-                            <p><strong>NOVO!</strong> Pressione e segure uma mensagem > Categorizar > "+ Nova Categoria". Digite o nome e confirme. A categoria será criada e adicionada aos chips de filtro automaticamente.</p>
+                            <summary>💾 Como fazer backup e restaurar?</summary>
+                            <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                <p><strong>Exportar Backup:</strong></p>
+                                <ol>
+                                    <li>Toque no ícone de <strong>Menu (três pontos verticais)</strong> no canto superior direito</li>
+                                    <li>Selecione <strong>"Backup"</strong></li>
+                                    <li>Escolha <strong>"Exportar"</strong></li>
+                                    <li>O app criará um arquivo <strong>JSON</strong> com:
+                                        <ul>
+                                            <li>Todas as suas categorias personalizadas</li>
+                                            <li>Lista de números bloqueados</li>
+                                            <li>Mapeamento de remetentes para categorias</li>
+                                            <li>Configurações do app</li>
+                                        </ul>
+                                    </li>
+                                    <li>Escolha onde salvar (Google Drive, armazenamento local, etc)</li>
+                                </ol>
+                                
+                                <p style="margin-top: 1rem;"><strong>Importar Backup:</strong></p>
+                                <ol>
+                                    <li>Toque no Menu (⋮) > <strong>Backup</strong></li>
+                                    <li>Selecione <strong>"Importar"</strong></li>
+                                    <li>Escolha o arquivo JSON que você exportou anteriormente</li>
+                                    <li>Todas as configurações, categorias e listas serão restauradas instantaneamente</li>
+                                </ol>
+                                
+                                <p style="margin-top: 1rem; padding: 0.5rem; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+                                    <strong>⚠️ Importante:</strong> O backup NÃO contém o conteúdo das mensagens SMS, apenas suas configurações e organização.
+                                </p>
+                            </div>
                         </details>
 
+                        <!-- BLOQUEIO DE SPAM -->
                         <details class="faq-item">
-                            <summary>Como excluir mensagens de uma categoria específica?</summary>
-                            <p><strong>NOVO!</strong> Filtre pela categoria desejada usando os chips. Ative o modo de seleção (pressione e segure), marque as mensagens e use a opção de excluir. Isso afeta apenas mensagens da categoria ativa.</p>
+                            <summary>🚫 Como bloquear spam?</summary>
+                            <p><strong>Detecção Automática:</strong> O app possui filtro automático que detecta spam usando palavras-chave como: "ganhou", "prêmio", "sorteio", "clique", "urgente", "pix", "oferta". Mensagens detectadas aparecem marcadas como <strong>[SPAM]</strong>.</p>
+                            <p><strong>Marcar Remetente como Spam:</strong> Entre no modo de seleção, selecione mensagens do remetente e toque no ícone <strong>⚠️ Aviso</strong>. Todas as mensagens futuras deste remetente serão marcadas como spam.</p>
+                            <p><strong>Bloquear Número Permanentemente:</strong> Entre no modo de seleção, selecione mensagens do remetente e toque no ícone <strong>🚫 Bloquear</strong>. Mensagens deste número não aparecerão mais no app.</p>
                         </details>
 
+                        <!-- DUAL SIM -->
                         <details class="faq-item">
-                            <summary>Como bloquear spam automaticamente?</summary>
-                            <p>O app possui filtro automático de spam com palavras-chave como "ganhou", "prêmio", "sorteio", "clique", "urgente", "oferta". Mensagens detectadas aparecem marcadas como [SPAM]. Você também pode marcar remetentes específicos como spam.</p>
+                            <summary>📶 Como funciona o Dual SIM?</summary>
+                            <p>O app detecta automaticamente ambos os chips SIM instalados no seu dispositivo.</p>
+                            <p><strong>Abas Dedicadas:</strong> Use as abas "Chip 1" e "Chip 2" no topo da tela para alternar entre as mensagens de cada operadora.</p>
+                            <p><strong>Identificação Automática:</strong> O nome da operadora aparece na aba (ex: "Chip 1 (Vivo)", "Chip 2 (Claro)").</p>
+                            <p><strong>Categorias por Chip:</strong> Cada chip mantém suas próprias categorias e filtros independentes.</p>
                         </details>
 
+                        <!-- PERÍODO DE TESTE -->
                         <details class="faq-item">
-                            <summary>Como bloquear um número permanentemente?</summary>
-                            <p>Pressione e segure a mensagem do remetente > Bloquear Número. Mensagens deste número não aparecerão mais no app. Você pode desbloquear depois nas configurações se necessário.</p>
+                            <summary>🎁 Como funciona o período de teste?</summary>
+                            <p><strong>14 Dias Grátis:</strong> Você tem 14 dias de uso gratuito completo com todos os recursos.</p>
+                            <p><strong>Após o Teste:</strong> É necessária uma assinatura premium para continuar gerenciando suas mensagens.</p>
+                            <p><strong>Suas Configurações:</strong> Todas as categorias, listas de bloqueio e configurações são mantidas, mesmo após o período de teste.</p>
                         </details>
 
+                        <!-- EXCLUSÃO DE DADOS -->
                         <details class="faq-item">
-                            <summary>Como usar a busca dentro de categorias?</summary>
-                            <p><strong>NOVO!</strong> Primeiro, selecione a categoria desejada usando os chips. Depois, use a barra de busca no topo. A busca encontrará mensagens apenas dentro da categoria ativa, tornando os resultados mais precisos.</p>
-                        </details>
-
-                        <details class="faq-item">
-                            <summary>O que acontece após o período de 14 dias grátis?</summary>
-                            <p>Você terá 14 dias de acesso completo a todos os recursos. Após isso, pode optar por assinar o plano premium ou continuar usando recursos básicos. Suas configurações e categorias são mantidas.</p>
-                        </details>
-
-                        <details class="faq-item">
-                            <summary>Como atualizar a lista de mensagens?</summary>
-                            <p>Puxe a tela para baixo (pull to refresh) para recarregar todas as mensagens. O app sincronizará com o banco de dados do sistema e aplicará suas categorias e filtros.</p>
+                            <summary>🗑️ Como excluir meus dados?</summary>
+                            <p><strong>Dados Locais:</strong> Suas mensagens e configurações ficam armazenadas APENAS no seu dispositivo.</p>
+                            <p><strong>Para limpar dados do app:</strong> Vá em Configurações do Android > Apps > Kavlac SMS Dual > Armazenamento > Limpar Dados.</p>
+                            <p><strong>Para solicitar exclusão de conta:</strong> <a href="../contato.html" style="color: #2563eb; font-weight: 600;">Use nosso formulário de contato</a> e selecione "Privacidade e Dados" como assunto.</p>
                         </details>
                     </div>
-                </div>
-
-                <div class="support-card">
-                    <div class="support-icon">🗑️</div>
-                    <h3>Exclusão de Dados</h3>
-                    <p>Para solicitar a exclusão de sua conta e dados do SMS Dual:</p>
-                    <ol class="support-steps">
-                        <li><a href="../contato.html" style="color: #2563eb; font-weight: 600;">Use nosso formulário de contato</a></li>
-                        <li>Selecione "Privacidade e Dados" como assunto</li>
-                        <li>Escreva "Excluir meus dados - SMS Dual" na mensagem</li>
-                        <li>Informe seu email cadastrado no app (se houver)</li>
-                        <li>Aguarde confirmação (prazo: até 7 dias úteis)</li>
-                    </ol>
-                    <p class="support-note">Todos os backups (se houver) e dados sincronizados serão permanentemente removidos.</p>
                 </div>
             </div>
 
             <div class="content-card tips-section">
-                <h2>🎯 Dicas para Melhor Uso das Novas Funcionalidades</h2>
+                <h2>💡 Dicas para Uso Eficiente</h2>
                 <ul class="tips-list">
-                    <li><strong>Organize desde o início:</strong> Categorize mensagens importantes assim que chegarem para manter tudo organizado</li>
-                    <li><strong>Crie categorias específicas:</strong> Além das padrão, crie categorias como "Família", "Compras", "Saúde" conforme sua necessidade</li>
-                    <li><strong>Use filtros + busca:</strong> Filtre por categoria primeiro, depois use a busca para encontrar mensagens específicas rapidamente</li>
-                    <li><strong>Faça backup regularmente:</strong> Exporte um backup a cada mês ou antes de trocar de dispositivo</li>
-                    <li><strong>Seleção múltipla para limpeza:</strong> Use o modo de seleção para limpar várias mensagens antigas de uma vez</li>
-                    <li><strong>Configure notificações diferentes para cada chip SIM:</strong> Identifique facilmente qual linha está recebendo mensagens</li>
-                    <li><strong>Ative o modo escuro à noite:</strong> Reduz cansaço visual e economiza bateria</li>
-                    <li><strong>Marque spam proativamente:</strong> Quanto mais você marcar, melhor o filtro automático ficará</li>
-                    <li><strong>Exporte antes de reinstalar:</strong> Se for resetar o celular, faça backup primeiro para não perder categorias</li>
+                    <li><strong>Organize desde o início:</strong> Crie categorias e mova remetentes importantes logo que receber a primeira mensagem</li>
+                    <li><strong>Use "Selecionar Tudo":</strong> Para limpar mensagens antigas de uma categoria inteira rapidamente</li>
+                    <li><strong>Combine Filtro + Busca:</strong> Filtre por categoria primeiro, depois use a busca para encontrar mensagens específicas</li>
+                    <li><strong>Faça backup mensal:</strong> Exporte um backup todo mês ou antes de trocar de dispositivo</li>
+                    <li><strong>Marque spam ativamente:</strong> Quanto mais você marcar, melhor o filtro automático ficará</li>
+                    <li><strong>Categorias específicas:</strong> Crie categorias como "Família", "Compras", "Saúde" conforme sua necessidade</li>
+                    <li><strong>Bloqueio preventivo:</strong> Bloqueie números de spam assim que identificá-los</li>
+                    <li><strong>Pull to refresh:</strong> Puxe para baixo sempre que quiser sincronizar mensagens novas</li>
                 </ul>
             </div>
 
             <div class="content-card">
-                <h2>📱 Atalhos e Gestos Úteis</h2>
+                <h2>⌨️ Atalhos e Gestos</h2>
                 <ul class="tips-list">
-                    <li><strong>Pressionar e segurar:</strong> Ativa menu contextual ou modo de seleção</li>
-                    <li><strong>Puxar para baixo:</strong> Atualiza lista de mensagens</li>
-                    <li><strong>Tocar no chip:</strong> Visualiza categorias do chip selecionado</li>
-                    <li><strong>Tocar em categoria:</strong> Filtra mensagens daquela categoria</li>
-                    <li><strong>Buscar dentro de categoria:</strong> Digite na barra de busca após selecionar categoria</li>
+                    <li><strong>Clique longo:</strong> Ativa modo de seleção múltipla</li>
+                    <li><strong>Puxar para baixo:</strong> Atualiza lista de mensagens (Pull to Refresh)</li>
+                    <li><strong>Tocar na aba Chip:</strong> Alterna entre mensagens do Chip 1 e Chip 2</li>
+                    <li><strong>Tocar em categoria (chip):</strong> Filtra mensagens daquela categoria</li>
+                    <li><strong>Botão "+ Nova":</strong> Cria nova categoria personalizada</li>
+                    <li><strong>Menu (⋮):</strong> Acessa opções de backup e configurações</li>
                 </ul>
             </div>
         </div>
